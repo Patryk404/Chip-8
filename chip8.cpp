@@ -417,6 +417,79 @@ void chip8::render(sf::RenderWindow& window) {
 	}
 }
 
+void chip8::keyEvents(unsigned char key,bool pressed) {
+		switch (key)
+		{
+		case '1': {
+			this->key[0x0] = pressed ? 1 : 0;
+			break;
+		}
+		case '2': {
+			this->key[0x1] = pressed ? 1 : 0;
+			break;
+		}
+		case '3': {
+			this->key[0x2] = pressed ? 1 : 0;
+			break;
+		}
+		case '4': {
+			this->key[0x3] = pressed ? 1 : 0;
+			break;
+		}
+		case 'Q': {
+			this->key[0x4] = pressed ? 1 : 0;
+			break;
+		}
+		case 'W': {
+			this->key[0x5] = pressed ? 1 : 0;
+			break;
+		}
+		case 'E': {
+			this->key[0x6] = pressed ? 1 : 0;
+			break;
+		}
+		case 'R': {
+			this->key[0x7] = pressed ? 1 : 0;
+			break;
+		}
+		case 'A': {
+			this->key[0x8] = pressed ? 1 : 0;
+			break;
+		}
+		case 'S': {
+			this->key[0x9] = pressed ? 1 : 0;
+			break;
+		}
+		case 'D': {
+			this->key[0xA] = pressed ? 1 : 0;
+			break;
+		}
+		case 'F': {
+			this->key[0xB] = pressed ? 1 : 0;
+			break;
+		}
+		case 'Z': {
+			this->key[0xC] = pressed ? 1 : 0;
+			break;
+		}
+		case 'X': {
+			this->key[0xD] = pressed ? 1 : 0;
+			break;
+		}
+		case 'C': {
+			this->key[0xE] = pressed ? 1 : 0;
+			break;
+		}
+		case 'V': {
+			this->key[0xF] = pressed ? 1 : 0;
+			break;
+		}
+		default:
+			break;
+		}
+
+}
+
 bool chip8::loadGame(const char * name_game) {
 	initialize();
     FILE* file = fopen(name_game, "rb");

@@ -20,7 +20,7 @@ public:
 	void initialize();//  Initialize the Chip8 system and load the game into the memory 
 	bool loadGame(const char * name_game); //loading a game into the memory
 	void emulateCycle();// emulate one cycle of game
-	void setKeys();// store key press state (Press and Release)
+	void keyEvents(unsigned char key,bool pressed);// store key press state (Press and Release)
 	void debugRender();
 	void render(sf::RenderWindow& window);
 	bool drawFlag;
