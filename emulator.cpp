@@ -5,7 +5,8 @@
 #include <SFML/Graphics.hpp>
 
 chip8 CHIP;
-char fromKtoS(const sf::Keyboard::Key& k);
+char fromKtoC(const sf::Keyboard::Key& k);
+
 int main(int argc, char **argv)
 {
 	sf::RenderWindow window(sf::VideoMode(650, 320), "Emulator chip-8");
@@ -29,19 +30,19 @@ int main(int argc, char **argv)
                 window.close();
             if (event.type == sf::Event::KeyPressed) {
                 sf::Keyboard::Key key = event.key.code;
-               unsigned char key2 = fromKtoS(key);
+               unsigned char key2 = fromKtoC(key);
                if (key2=='0') {
                    //std::cout << "Wrong key " << std::endl;
                    break;
                }
                CHIP.keyEvents(key2, true);
-               std::cout << key2 << std::endl;
+               //std::cout << key2 << std::endl;
             }
             else if (event.type == sf::Event::KeyReleased) {
                 sf::Keyboard::Key key = event.key.code;
-                unsigned char key2 = fromKtoS(key);
+                unsigned char key2 = fromKtoC(key);
                 CHIP.keyEvents(key2, false);
-                std::cout << key2 << std::endl;
+                //std::cout << key2 << std::endl;
             }
         }
         // Clear screen
@@ -53,7 +54,7 @@ int main(int argc, char **argv)
     }
 }
 
-char fromKtoS(const sf::Keyboard::Key& k) {
+char fromKtoC(const sf::Keyboard::Key& k) {
     char ret = '0';
     switch (k)
     {

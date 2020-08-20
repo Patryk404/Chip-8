@@ -1,0 +1,4 @@
+*.dll
+!WinBuild/*.dll
+.vcxproj
+/Debug
