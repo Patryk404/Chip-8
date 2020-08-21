@@ -2,6 +2,7 @@
 #include <string.h>
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 class chip8 {
 private:
 	unsigned short opcode;
@@ -15,6 +16,8 @@ private:
 	unsigned short stack[16];
 	unsigned short sp; // stack pointer
 	unsigned char key[16]; // 0x0-0xF
+	sf::SoundBuffer buffer;
+	sf::Sound BEEP;
 public: 
 	chip8();
 	void initialize();//  Initialize the Chip8 system and load the game into the memory 

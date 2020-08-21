@@ -1,4 +1,6 @@
 *.dll
 !WinBuild/*.dll
-.vcxproj
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
 /Debug

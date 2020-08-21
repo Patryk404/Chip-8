@@ -60,6 +60,10 @@ void chip8::initialize() {
 	{
 		memory[i] = chip8_fontset[i];
 	}
+	if (!buffer.loadFromFile("beep.wav")) {
+		std::cout << "Cannot load a beep sound" << std::endl;
+	}
+	BEEP.setBuffer(buffer);
 }
 
 void chip8::emulateCycle() {
@@ -368,8 +372,9 @@ void chip8::emulateCycle() {
 
 	if (sound_timer > 0)
 	{
-		if (sound_timer == 1)
-			printf("BEEP!\n");
+		if (sound_timer == 1) {
+			BEEP.play();
+		}
 		--sound_timer;
 	}
 }
