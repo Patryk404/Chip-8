@@ -5,7 +5,7 @@
 #include <SFML/Graphics.hpp>
 
 chip8 CHIP;
-char fromKtoC(const sf::Keyboard::Key& k);
+char fromKeytoChar(const sf::Keyboard::Key& k);
 
 int main(int argc, char **argv)
 {
@@ -30,7 +30,7 @@ int main(int argc, char **argv)
                 window.close();
             if (event.type == sf::Event::KeyPressed) {
                 sf::Keyboard::Key key = event.key.code;
-               unsigned char key2 = fromKtoC(key);
+               unsigned char key2 = fromKeytoChar(key);
                if (key2=='0') {
                    //std::cout << "Wrong key " << std::endl;
                    break;
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
             }
             else if (event.type == sf::Event::KeyReleased) {
                 sf::Keyboard::Key key = event.key.code;
-                unsigned char key2 = fromKtoC(key);
+                unsigned char key2 = fromKeytoChar(key);
                 CHIP.keyEvents(key2, false);
                 //std::cout << key2 << std::endl;
             }
@@ -54,7 +54,7 @@ int main(int argc, char **argv)
     }
 }
 
-char fromKtoC(const sf::Keyboard::Key& k) {
+char fromKeytoChar(const sf::Keyboard::Key& k) {
     char ret = '0';
     switch (k)
     {
