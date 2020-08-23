@@ -4,11 +4,12 @@
 #include <conio.h>
 #include <SFML/Graphics.hpp>
 
-chip8 CHIP;
+
 char fromKeytoChar(const sf::Keyboard::Key& k);
 
 int main(int argc, char **argv)
 {
+    chip8 CHIP;
 	sf::RenderWindow window(sf::VideoMode(650, 320), "Emulator chip-8");
     window.setFramerateLimit(1000);
 	if (argc < 2)

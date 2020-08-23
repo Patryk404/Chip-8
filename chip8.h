@@ -27,5 +27,4 @@ public:
 	void keyEvents(unsigned char key,bool pressed);// store key press state (Press and Release)
 	void debugRender();
 	void render(sf::RenderWindow& window);
-	bool drawFlag;
 };
