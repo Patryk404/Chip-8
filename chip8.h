@@ -18,6 +18,7 @@ private:
 	unsigned char key[16]; // 0x0-0xF
 	sf::SoundBuffer buffer;
 	sf::Sound BEEP;
+	void update_timers();
 public: 
 	chip8();
 	void initialize();//  Initialize the Chip8 system and load the game into the memory 
